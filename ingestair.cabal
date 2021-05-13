@@ -1,10 +1,10 @@
 cabal-version: 1.12
 
--- This file has been generated from package.yaml by hpack version 0.33.0.
+-- This file has been generated from package.yaml by hpack version 0.34.4.
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: c43e0f149f976c8e8664d46e613734a5f6fa595182aad5a03fca10de7f657e78
+-- hash: 00eb8751757321e96bdd73ca5508d67789596f96aff6782319f74b8c5afae895
 
 name:           ingestair
 version:        0.1.0.0
@@ -15,7 +15,6 @@ author:         Ulrich Schuster
 maintainer:     ulrich.schuster@koing.de
 copyright:      2021 Ulrich Schuster
 license:        BSD3
-license-file:   LICENSE
 build-type:     Simple
 extra-source-files:
     README.md
@@ -29,7 +28,6 @@ executable ingestair-exe
   main-is: Main.hs
   other-modules:
       Configuration
-      Logging
       Paths_ingestair
   hs-source-dirs:
       ingestair
