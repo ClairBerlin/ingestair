@@ -1,0 +1,24 @@
+# GHC and Stack
+.stack-work/
+.hie/
+.vscode/
+*~
+
+#IntelliJ IDEA
+.idea/
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+cover/
+
+# Translations
+*.mo
+*.pot

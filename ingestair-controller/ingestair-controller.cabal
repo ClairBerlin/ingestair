@@ -1,0 +1,47 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: d573aa80350dd0eae34218598e4c3c0db07c804dca6c2225c2cdf48346be5d21
+
+name:           ingestair-controller
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/servant-rio#readme>
+homepage:       https://github.com/githubuser/ingestair-controller#readme
+bug-reports:    https://github.com/githubuser/ingestair-controller/issues
+author:         Ulrich Schuster
+maintainer:     ulrich.schuster@koing.de
+copyright:      2021 Ulrich Schuster
+license:        BSD3
+build-type:     Simple
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/ingestair-controller
+
+library
+  exposed-modules:
+      Ingestair.Controller.Server
+      Ingestair.Controller.SampleRepositoryI
+  other-modules:
+      Ingestair.Controller.Ingest
+      Ingestair.Controller.RIOThrowAll
+      Paths_ingestair_controller
+  hs-source-dirs:
+      src
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wpartial-fields -Wredundant-constraints -fwarn-tabs
+  build-depends:
+      base
+    , bytestring
+    , http-types
+    , ingestair-api
+    , ingestair-domain
+    , mtl
+    , rio
+    , servant
+    , servant-server
+    , tagged
+    , wai
+  default-language: Haskell2010

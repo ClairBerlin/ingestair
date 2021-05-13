@@ -1,0 +1,64 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: c43e0f149f976c8e8664d46e613734a5f6fa595182aad5a03fca10de7f657e78
+
+name:           ingestair
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/ingestair#readme>
+homepage:       https://github.com/githubuser/ingestair#readme
+bug-reports:    https://github.com/githubuser/ingestair/issues
+author:         Ulrich Schuster
+maintainer:     ulrich.schuster@koing.de
+copyright:      2021 Ulrich Schuster
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/ingestair
+
+executable ingestair-exe
+  main-is: Main.hs
+  other-modules:
+      Configuration
+      Logging
+      Paths_ingestair
+  hs-source-dirs:
+      ingestair
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wpartial-fields -Wredundant-constraints -fwarn-tabs -fwrite-ide-info -hiedir=.hie -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base
+    , bytestring
+    , envy
+    , ingestair-api
+    , ingestair-controller
+    , ingestair-persistence
+    , rio
+    , servant
+    , servant-server
+    , wai-extra
+    , warp
+  default-language: Haskell2010
+
+test-suite ingestair-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_ingestair
+  hs-source-dirs:
+      test
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wpartial-fields -Wredundant-constraints -fwarn-tabs -fwrite-ide-info -hiedir=.hie -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base
+    , ingestair-api
+    , ingestair-server
+    , rio
+  default-language: Haskell2010

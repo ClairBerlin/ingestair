@@ -1,0 +1,48 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 26f0d53138d0460c0aeeea58c6e6e113a359035c8c50606669cd6b4fba42f34a
+
+name:           ingestair-persistence
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/servant-rio#readme>
+homepage:       https://github.com/githubuser/ingestair-persistence#readme
+bug-reports:    https://github.com/githubuser/ingestair-persistence/issues
+author:         Ulrich Schuster
+maintainer:     ulrich.schuster@koing.de
+copyright:      2021 Ulrich Schuster
+license:        BSD3
+build-type:     Simple
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/ingestair-persistence
+
+library
+  exposed-modules:
+      Ingestair.Persistence.Api
+  other-modules:
+      Ingestair.Persistence.DbConfiguration
+      Ingestair.Persistence.PersistenceUtils
+      Ingestair.Persistence.SampleRepository
+      Ingestair.Persistence.SamplesTable
+      Paths_ingestair_persistence
+  hs-source-dirs:
+      src
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wpartial-fields -Wredundant-constraints -fwarn-tabs
+  build-depends:
+      base
+    , ingestair-controller
+    , ingestair-domain
+    , opaleye
+    , postgresql-simple
+    , product-profunctors
+    , profunctors
+    , resource-pool
+    , rio
+    , scientific
+    , uuid
+  default-language: Haskell2010
