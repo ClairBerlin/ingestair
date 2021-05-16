@@ -187,7 +187,8 @@ toDomain st = maybeSample `PU.orThrow` LoadTypeError
   <> " is invalid."
   )
  where
-  maybeSample = DS.mkSample (sample_timestamp_s st)
+  maybeSample = DS.mkSample (Just $ (getPk . sample_key) st)
+                            (sample_timestamp_s st)
                             (sample_co2_ppm st)
                             (sample_temperature_celsius st)
                             (sample_rel_humidity_percent st)

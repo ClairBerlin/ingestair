@@ -25,7 +25,7 @@ import qualified Data.Profunctor.Product.Default
 
 
 import qualified Ingestair.Domain.Sample       as DS
-import qualified Ingestair.Controller.SampleRepositoryI
+import qualified Ingestair.Usecases.SampleRepositoryI
                                                as SRI
 import qualified Ingestair.Persistence.DbConfiguration
                                                as DBC

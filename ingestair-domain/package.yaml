@@ -1,10 +1,10 @@
-name:                ingestair-domain
-version:             0.1.0.0
-github:              "githubuser/ingestair-domain"
-license:             BSD3
-author:              "Ulrich Schuster"
-maintainer:          "ulrich.schuster@koing.de"
-copyright:           "2021 Ulrich Schuster"
+name: ingestair-domain
+version: 0.1.0.0
+github: "ClairBerlin/ingestair"
+license: BSD3
+author: "Ulrich Schuster"
+maintainer: "ulrich.schuster@koing.de"
+copyright: "2021 Ulrich Schuster"
 
 # Metadata used when publishing your package
 # synopsis:            Short description of your package
@@ -13,28 +13,28 @@ copyright:           "2021 Ulrich Schuster"
 # To avoid duplicated efforts in documentation and dealing with the
 # complications of embedding Haddock markup inside cabal files, it is
 # common to point users to the README.md file.
-description:         Please see the README on GitHub at <https://github.com/githubuser/servant-rio#readme>
+description: Please see the README on GitHub at <https://github.com/githubuser/servant-rio#readme>
 
 dependencies:
-- base
-- rio
+  - base
+  - rio
 
 ghc-options:
-- -Wall
-- -Wcompat
-- -Widentities
-- -Wincomplete-record-updates
-- -Wincomplete-uni-patterns
-- -Wpartial-fields
-- -Wredundant-constraints
-- -fwarn-tabs
+  - -Wall
+  - -Wcompat
+  - -Widentities
+  - -Wincomplete-record-updates
+  - -Wincomplete-uni-patterns
+  - -Wpartial-fields
+  - -Wredundant-constraints
+  - -fwarn-tabs
 
 library:
   source-dirs:
-  - src
+    - src
   exposed-modules:
-  - Ingestair.Domain.Sample
+    - Ingestair.Domain.Sample
   dependencies:
-  - aeson
-  - scientific
-  - uuid
+    - aeson
+    - scientific
+    - uuid

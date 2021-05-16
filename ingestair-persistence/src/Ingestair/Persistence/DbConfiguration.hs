@@ -3,7 +3,7 @@
 {-# LANGUAGE FlexibleInstances #-}
 
 module Ingestair.Persistence.DbConfiguration
-  (DbConfig(..)
+  ( DbConfig(..)
   , HasDbConfig
   , dBConfigL
   , ConnPool(..)
@@ -16,10 +16,10 @@ module Ingestair.Persistence.DbConfiguration
 where
 
 import           RIO
+import qualified RIO.Text                      as T
 
 import qualified Database.PostgreSQL.Simple    as PGS
 import qualified Data.Pool                     as DPL
-import qualified RIO.Text                      as T
 
 
 -- | Configuration of the PostgreSQL DBMS.

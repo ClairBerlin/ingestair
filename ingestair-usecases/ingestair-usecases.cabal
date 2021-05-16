@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 
-name:           ingestair-persistence
+name:           ingestair-usecases
 version:        0.1.0.0
 description:    Please see the README on GitHub at <https://github.com/githubuser/servant-rio#readme>
 homepage:       https://github.com/ClairBerlin/ingestair#readme
@@ -21,24 +21,15 @@ source-repository head
 
 library
   exposed-modules:
-      Ingestair.Persistence.Api
+      Ingestair.Usecases.IngestUC
+      Ingestair.Usecases.SampleRepositoryI
   other-modules:
-      Ingestair.Persistence.DbConfiguration
-      Ingestair.Persistence.PersistenceUtils
-      Ingestair.Persistence.SampleRepository
-      Ingestair.Persistence.SamplesTable
-      Paths_ingestair_persistence
+      Paths_ingestair_usecases
   hs-source-dirs:
       src
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wpartial-fields -Wredundant-constraints -fwarn-tabs
   build-depends:
       base
     , ingestair-domain
-    , ingestair-usecases
-    , opaleye
-    , postgresql-simple
-    , product-profunctors
-    , profunctors
-    , resource-pool
     , rio
   default-language: Haskell2010

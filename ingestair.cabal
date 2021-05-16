@@ -4,13 +4,13 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 00eb8751757321e96bdd73ca5508d67789596f96aff6782319f74b8c5afae895
+-- hash: e869ff009d6682d8b616162b47ce558c22369bab5c5bed0dd85fd52507265ecd
 
 name:           ingestair
 version:        0.1.0.0
 description:    Please see the README on GitHub at <https://github.com/githubuser/ingestair#readme>
-homepage:       https://github.com/githubuser/ingestair#readme
-bug-reports:    https://github.com/githubuser/ingestair/issues
+homepage:       https://github.com/ClairBerlin/ingestair#readme
+bug-reports:    https://github.com/ClairBerlin/ingestair/issues
 author:         Ulrich Schuster
 maintainer:     ulrich.schuster@koing.de
 copyright:      2021 Ulrich Schuster
@@ -22,7 +22,7 @@ extra-source-files:
 
 source-repository head
   type: git
-  location: https://github.com/githubuser/ingestair
+  location: https://github.com/ClairBerlin/ingestair
 
 executable ingestair-exe
   main-is: Main.hs
@@ -36,9 +36,9 @@ executable ingestair-exe
       base
     , bytestring
     , envy
-    , ingestair-api
-    , ingestair-controller
+    , ingestair-interactor
     , ingestair-persistence
+    , ingestair-usecases
     , rio
     , servant
     , servant-server
@@ -56,7 +56,6 @@ test-suite ingestair-test
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wpartial-fields -Wredundant-constraints -fwarn-tabs -fwrite-ide-info -hiedir=.hie -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       base
-    , ingestair-api
-    , ingestair-server
+    , ingestair-interactor
     , rio
   default-language: Haskell2010

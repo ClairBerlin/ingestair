@@ -1,16 +1,14 @@
 cabal-version: 1.12
 
--- This file has been generated from package.yaml by hpack version 0.33.0.
+-- This file has been generated from package.yaml by hpack version 0.34.4.
 --
 -- see: https://github.com/sol/hpack
---
--- hash: a7a495116e03b9b4265e8620dc505d486be3fe8afa63d5f2edce7a018f357042
 
 name:           ingestair-domain
 version:        0.1.0.0
 description:    Please see the README on GitHub at <https://github.com/githubuser/servant-rio#readme>
-homepage:       https://github.com/githubuser/ingestair-domain#readme
-bug-reports:    https://github.com/githubuser/ingestair-domain/issues
+homepage:       https://github.com/ClairBerlin/ingestair#readme
+bug-reports:    https://github.com/ClairBerlin/ingestair/issues
 author:         Ulrich Schuster
 maintainer:     ulrich.schuster@koing.de
 copyright:      2021 Ulrich Schuster
@@ -19,7 +17,7 @@ build-type:     Simple
 
 source-repository head
   type: git
-  location: https://github.com/githubuser/ingestair-domain
+  location: https://github.com/ClairBerlin/ingestair
 
 library
   exposed-modules:

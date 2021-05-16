@@ -1,0 +1,31 @@
+
+@startuml dependencies
+
+[Envy]#LightGrey
+[Wai/Warp]#LightGrey
+[Servant]#LightGrey
+[JSON:API]#LightGrey
+[Opaleye]#LightGrey
+
+[Application]
+[WebInteractor]
+[Persistence]
+[Usecases]
+[Domain]
+
+[Application] --> [Envy]
+[Application] --> [Wai/Warp]
+[Application] --> [Persistence]
+[Application] --> [WebInteractor]
+[Application] --> [Usecases]
+[WebInteractor] --> [Domain]
+[WebInteractor] --> [Usecases]
+[WebInteractor] --> [Servant]
+[WebInteractor] --> [JSON:API]
+[WebInteractor] --> [Wai/Warp]
+[Persistence] --> [Usecases]
+[Persistence] --> [Domain]
+[Persistence] --> [Opaleye]
+[Usecases] --> [Domain]
+
+@enduml

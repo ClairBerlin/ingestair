@@ -1,6 +1,6 @@
 name:                ingestair
 version:             0.1.0.0
-github:              "githubuser/ingestair"
+github:              "ClairBerlin/ingestair"
 license:             BSD3
 author:              "Ulrich Schuster"
 maintainer:          "ulrich.schuster@koing.de"
@@ -46,9 +46,9 @@ executables:
     - -rtsopts
     - -with-rtsopts=-N
     dependencies:
-    - ingestair-api
     - ingestair-persistence
-    - ingestair-controller
+    - ingestair-interactor
+    - ingestair-usecases
     - envy
     - servant
     - servant-server
@@ -65,5 +65,4 @@ tests:
     - -rtsopts
     - -with-rtsopts=-N
     dependencies:
-    - ingestair-api
-    - ingestair-server
+    - ingestair-interactor

@@ -1,4 +1,4 @@
-name: ingestair-persistence
+name: ingestair-usecases
 version: 0.1.0.0
 github: "ClairBerlin/ingestair"
 license: BSD3
@@ -32,13 +32,5 @@ ghc-options:
 library:
   source-dirs:
     - src
-  exposed-modules:
-    - Ingestair.Persistence.Api
   dependencies:
     - ingestair-domain
-    - ingestair-usecases
-    - profunctors
-    - product-profunctors
-    - postgresql-simple
-    - opaleye
-    - resource-pool

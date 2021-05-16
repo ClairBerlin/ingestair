@@ -1,4 +1,4 @@
-name: ingestair-persistence
+name: ingestair-interactor
 version: 0.1.0.0
 github: "ClairBerlin/ingestair"
 license: BSD3
@@ -33,12 +33,17 @@ library:
   source-dirs:
     - src
   exposed-modules:
-    - Ingestair.Persistence.Api
+    - Ingestair.WebInteractor.Server
   dependencies:
     - ingestair-domain
     - ingestair-usecases
-    - profunctors
-    - product-profunctors
-    - postgresql-simple
-    - opaleye
-    - resource-pool
+    - uuid
+    - scientific
+    - aeson
+    - json-api-lib
+    - servant-server
+    - wai
+    - bytestring
+    - http-types
+    - tagged
+    - mtl

@@ -1,16 +1,14 @@
 cabal-version: 1.12
 
--- This file has been generated from package.yaml by hpack version 0.33.0.
+-- This file has been generated from package.yaml by hpack version 0.34.4.
 --
 -- see: https://github.com/sol/hpack
---
--- hash: d573aa80350dd0eae34218598e4c3c0db07c804dca6c2225c2cdf48346be5d21
 
-name:           ingestair-controller
+name:           ingestair-interactor
 version:        0.1.0.0
 description:    Please see the README on GitHub at <https://github.com/githubuser/servant-rio#readme>
-homepage:       https://github.com/githubuser/ingestair-controller#readme
-bug-reports:    https://github.com/githubuser/ingestair-controller/issues
+homepage:       https://github.com/ClairBerlin/ingestair#readme
+bug-reports:    https://github.com/ClairBerlin/ingestair/issues
 author:         Ulrich Schuster
 maintainer:     ulrich.schuster@koing.de
 copyright:      2021 Ulrich Schuster
@@ -19,29 +17,34 @@ build-type:     Simple
 
 source-repository head
   type: git
-  location: https://github.com/githubuser/ingestair-controller
+  location: https://github.com/ClairBerlin/ingestair
 
 library
   exposed-modules:
-      Ingestair.Controller.Server
-      Ingestair.Controller.SampleRepositoryI
+      Ingestair.WebInteractor.Server
   other-modules:
-      Ingestair.Controller.Ingest
-      Ingestair.Controller.RIOThrowAll
-      Paths_ingestair_controller
+      Ingestair.WebInteractor.IngestEndpoint
+      Ingestair.WebInteractor.RIOThrowAll
+      Ingestair.WebInteractor.SampleRequest
+      Ingestair.WebInteractor.SampleResource
+      Ingestair.WebInteractor.WebApi
+      Paths_ingestair_interactor
   hs-source-dirs:
       src
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wpartial-fields -Wredundant-constraints -fwarn-tabs
   build-depends:
-      base
+      aeson
+    , base
     , bytestring
     , http-types
-    , ingestair-api
     , ingestair-domain
+    , ingestair-usecases
+    , json-api-lib
     , mtl
     , rio
-    , servant
+    , scientific
     , servant-server
     , tagged
+    , uuid
     , wai
   default-language: Haskell2010

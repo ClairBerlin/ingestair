@@ -3,7 +3,14 @@
 # For more information, please see the documentation at:
 #   https://docs.haskellstack.org/en/stable/lock_files
 
-packages: []
+packages:
+- completed:
+    hackage: json-api-lib-0.3.0.0@sha256:734232c9cc80f59214222f9ca3923677b027541282bcb8f2705d607ad03e689a,3423
+    pantry-tree:
+      size: 1289
+      sha256: 1e4c40e3a6aa494de2ffc99056ff436ebb2c860bb2f397a5b17bbc0461a0264f
+  original:
+    hackage: json-api-lib-0.3.0.0
 snapshots:
 - completed:
     size: 567672

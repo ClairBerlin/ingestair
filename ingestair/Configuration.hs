@@ -18,7 +18,7 @@ import qualified RIO.Text                      as T
 import qualified Network.Wai.Handler.Warp      as Warp
 import qualified System.Envy                   as EV
 
-import qualified Ingestair.Controller.SampleRepositoryI
+import qualified Ingestair.Usecases.SampleRepositoryI
                                                as SRI
 import qualified Ingestair.Persistence.Api     as DB
 
