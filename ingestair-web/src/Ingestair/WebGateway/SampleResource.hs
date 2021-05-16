@@ -2,7 +2,7 @@
 {-# LANGUAGE NoImplicitPrelude #-}
 {-# LANGUAGE DeriveGeneric #-}
 
-module Ingestair.WebInteractor.SampleResource
+module Ingestair.WebGateway.SampleResource
   ( SampleId
   , SampleResource(..)
   , sampleResourceType

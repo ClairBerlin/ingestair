@@ -3,9 +3,9 @@ resolver: lts-17.11
 
 # User packages to be built.
 packages:
-- ingestair-interactor
-- ingestair-usecases
+- ingestair-web
 - ingestair-persistence
+- ingestair-usecases
 - ingestair-domain
 - .
 # Dependency packages to be pulled from upstream that are not in the resolver.

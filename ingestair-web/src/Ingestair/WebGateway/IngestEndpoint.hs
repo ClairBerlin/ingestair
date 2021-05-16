@@ -1,7 +1,7 @@
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE NoImplicitPrelude #-}
 
-module Ingestair.WebInteractor.IngestEndpoint
+module Ingestair.WebGateway.IngestEndpoint
   ( ingestSample
   , getSample
   )
@@ -15,9 +15,9 @@ import qualified Network.JSONApi               as JA
 
 import qualified Ingestair.Domain.Sample       as DS
 
-import qualified Ingestair.WebInteractor.SampleRequest
+import qualified Ingestair.WebGateway.SampleRequest
                                                as SQ
-import qualified Ingestair.WebInteractor.SampleResource
+import qualified Ingestair.WebGateway.SampleResource
                                                as SR
 import qualified Ingestair.Usecases.IngestUC
                                                as IUC

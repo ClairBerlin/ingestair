@@ -2,7 +2,7 @@
 {-# LANGUAGE NoImplicitPrelude #-}
 {-# LANGUAGE DeriveGeneric #-}
 
-module Ingestair.WebInteractor.SampleRequest
+module Ingestair.WebGateway.SampleRequest
   ( SampleRequestData(..)
   , SampleRequestDocument(..)
   )
@@ -12,7 +12,7 @@ import           RIO
 
 import qualified Data.Aeson                    as J
 
-import           Ingestair.WebInteractor.SampleResource
+import           Ingestair.WebGateway.SampleResource
                                                as SR
 
 -- For parsing incoming JSON:API requests.

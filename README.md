@@ -48,4 +48,15 @@ In adition, I wanted to understand how to best architecture and structure such a
 Even though the functionality is minimal, I tried to come up with a "grown up" application architecture that follows Robert C. Martin's [Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html) principles, in particular, the _dependency rule_/
 For an application like ingestair, with minimal functionality, the Clean Architecture approach is totally overengineered. But then, the application is simple enough to understant the key architectural issues.
 
+Clean Architecture separates technical details of an application (like persistence or a web interface) from the core domain model and business logic.
+The latter should be at the center of the application, and dependencies should point inwards only, towards the domain functionality.
+In this way, changes to technical aspects to not result in changes to the application's core, and concerns remain separated.
+
+Martin gives a canonical architectural decomposition, which I tried to follow closely in the ingestair application.
+
+
 ![dependencies](doc/dependencies.svg)
+
+A dependency is any reference at the source code level: Whenever module A needs to import module B, this is a dependency.
+
+Because technical aspects are most often accessed as libraries or frameworks, they must be isolated from the core.

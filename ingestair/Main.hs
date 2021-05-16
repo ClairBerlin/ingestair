@@ -10,7 +10,7 @@ import qualified Network.Wai.Middleware.RequestLogger
                                                as RL
 import qualified System.Envy                   as EV
 
-import qualified Ingestair.WebInteractor.Server   as S
+import qualified Ingestair.WebGateway.Server   as S
 import qualified Ingestair.Persistence.Api     as DB
 import qualified Configuration                 as Conf
 

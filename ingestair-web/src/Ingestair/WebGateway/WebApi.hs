@@ -3,7 +3,7 @@
 {-# LANGUAGE DataKinds #-}
 {-# LANGUAGE TypeOperators #-}
 
-module Ingestair.WebInteractor.WebApi
+module Ingestair.WebGateway.WebApi
   ( ServerApi
   , apiProxy
   )
@@ -16,8 +16,8 @@ import           Servant                        ( (:>)
                                                 )
 import qualified Servant                       as SV
 
-import qualified Ingestair.WebInteractor.SampleResource as SR
-import qualified Ingestair.WebInteractor.SampleRequest as SQ
+import qualified Ingestair.WebGateway.SampleResource as SR
+import qualified Ingestair.WebGateway.SampleRequest as SQ
 
 
 

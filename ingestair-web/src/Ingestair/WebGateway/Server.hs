@@ -1,7 +1,7 @@
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE NoImplicitPrelude #-}
 
-module Ingestair.WebInteractor.Server
+module Ingestair.WebGateway.Server
   ( serverApp
   )
 where
@@ -14,9 +14,9 @@ import           Servant                        ( (:<|>)(..) )
 import qualified Servant                       as SV
 import qualified Network.Wai                   as Wai
 
-import qualified Ingestair.WebInteractor.WebApi
+import qualified Ingestair.WebGateway.WebApi
                                                as Api
-import qualified Ingestair.WebInteractor.IngestEndpoint
+import qualified Ingestair.WebGateway.IngestEndpoint
                                                as ING
 import qualified Ingestair.Usecases.SampleRepositoryI
                                                as SRI

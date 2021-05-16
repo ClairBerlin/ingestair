@@ -3,7 +3,7 @@
 {-# LANGUAGE FlexibleInstances #-}
 {-# LANGUAGE TypeFamilies #-}
 {-# LANGUAGE DataKinds #-}
-module Ingestair.WebInteractor.RIOThrowAll where
+module Ingestair.WebGateway.RIOThrowAll where
 
 import           RIO                            ( RIO ) -- rio
 import qualified RIO

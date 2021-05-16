@@ -47,7 +47,7 @@ executables:
     - -with-rtsopts=-N
     dependencies:
     - ingestair-persistence
-    - ingestair-interactor
+    - ingestair-web
     - ingestair-usecases
     - envy
     - servant

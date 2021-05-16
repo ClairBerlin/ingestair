@@ -1,4 +1,4 @@
-name: ingestair-interactor
+name: ingestair-web
 version: 0.1.0.0
 github: "ClairBerlin/ingestair"
 license: BSD3
@@ -33,7 +33,7 @@ library:
   source-dirs:
     - src
   exposed-modules:
-    - Ingestair.WebInteractor.Server
+    - Ingestair.WebGateway.Server
   dependencies:
     - ingestair-domain
     - ingestair-usecases
