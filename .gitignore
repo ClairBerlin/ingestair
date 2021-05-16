@@ -2,6 +2,7 @@
 .stack-work/
 .hie/
 .vscode/
+*.cabal
 *~
 
 #IntelliJ IDEA
