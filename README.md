@@ -53,10 +53,40 @@ The latter should be at the center of the application, and dependencies should p
 In this way, changes to technical aspects to not result in changes to the application's core, and concerns remain separated.
 
 Martin gives a canonical architectural decomposition, which I tried to follow closely in the ingestair application.
-
+A dependency is any reference at the source code level: Whenever module A needs to import module B, this is a dependency.
 
 ![dependencies](doc/dependencies.svg)
 
-A dependency is any reference at the source code level: Whenever module A needs to import module B, this is a dependency.
+- The _domain_ contains the domain model associated logic. Here, this is simply the model of a single _sample_, plus its validation rules.
+Leveraging Haskell's strong type systems, the `Sample` type comes with a smart constructor that ensures that all `Sample` values are legal - according to the [parse, don't validate](https://lexi-lambda.github.io/blog/2019/11/05/parse-don-t-validate/) pattern.
+`Sample` values can be used freely in the entire application without the need for additional validation. All domain code resides in the `domain` package, which does not depend on packages at higher layers.
+- The `usescases` package would implement the core business logic - if there was any. 
+This is where the Clean Architecture approach obviously is oberengineered for the application at hand, where the only use cases are to store and retrieve data.
+Consequenyly, there is not much going on in the `usecases` package.
+The key point, though, is that use cases handle domain values only.
+Beause domain values are strongly typed, use case logic does not need to be concerned with validation.
+All guarantees are embodied in the types.
+Taken together, the `domain` and `usecases` packages implement the [Domain Model Pattern](https://martinfowler.com/eaaCatalog/domainModel.html): The domain types and functionality can be tailored to match the problem domain, without the need to cater for technical considerations that arise from persistence or the UI.
+The price to pay are a range of [Data Mappers](https://martinfowler.com/eaaCatalog/dataMapper.html) at the boundaries to the web and for persistence.
+- Hallmark of the Clean Architecture approach is to push the dependencies on libraries and frameworks to the outer layers, and to provide a clear boundary.
+The `web` package contains the web interface of the application.
+It uses [Servant](https://docs.servant.dev/en/stable/index.html) to define the API and set up a web server.
+The resources of the API are defined here as well.
+For the simple create/retrieve application at hand, there would be no need to differentiate between the domain types and the resource types.
+Yet, to understand the implications, there nevertheless is `SampleResource` distinct from the domain `Sample` type.
+The `SampleResource`, in turn, could be served in different representations.
+Ingestair offers a single representation only, as [JSON:API](https://jsonapi.org/) document.
+The web gateway is responsible converting to and from the domain `Sample` type and to handle all errors that might aries.
+- Similar to the web gateway, persistence is a technical detail that the application core should not depend on.
+And analogously to the resources of the web API, the persistence layer uses its own decoupled data model that matches the SQL relational variables in the underlying database.
+The `usecases` package must be able to call the`persistence` package to store and load data;
+yet, according to the _dependency rule_, the `usecases` package must not depend on the `persistence` package.
+To this end, the `usecases` package defines the sample repository interface as a type class, which the `SampleRepository` module in the `persistence` package implements; this is _dependency inversion_.
+- Finally, the application handles initial configuration from environment variables, sets up the logging subsystem, and then launches the webserver to listen for incoming requests.
+The `env` record that the `main` function initializes contains all global configuration information. This record value is threaded throghout the entire application as _Reader_ environment in the `RIO env` monad.
+Wiring up the inverted dependency between between `usescases` package and `persistence` package happens as in the `Configuration` module at top-level, where the `Env` configuration record is declared an instance of the interface type class.
 
-Because technical aspects are most often accessed as libraries or frameworks, they must be isolated from the core.
+The Clean Architecture approach is visible in the dependency graph above: Libraries are imported in the upper layer only; the `usecases` and `domain` modules do not depend on technical details.
+The domain model and business logic can evolve independently.
+The price to pay is significant boilerplate for mappers between web, persistence and domain types.
+This overhead would not be necessary for a simple create/retrieve application as ingestair; yet, it provides for better isolation of concerns when the business logic becomes more involved.
