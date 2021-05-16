@@ -1,6 +1,5 @@
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE NoImplicitPrelude #-}
-{-# LANGUAGE DeriveGeneric #-}
 
 module Ingestair.Domain.Sample
   ( MeasurementStatus(..)
@@ -26,12 +25,7 @@ import qualified Data.Char                     as C
 import qualified Data.Scientific               as DS
 import qualified Data.UUID                     as UUID
 
-import qualified Data.Aeson                    as J
-
-data MeasurementStatus = M | R | E deriving (Eq, Show, Generic)
-
-instance J.FromJSON MeasurementStatus
-instance J.ToJSON MeasurementStatus
+data MeasurementStatus = M | R | E deriving (Eq, Show)
 
 mkMeasurementStatusC :: Char -> Maybe MeasurementStatus
 mkMeasurementStatusC s = case C.toUpper s of
@@ -68,10 +62,7 @@ data Sample = Sample
     , rel_humidity_percent :: !(Maybe HumidityPc)
     , measurement_status :: !MeasurementStatus
     , node_id :: !NodeUID
-    } deriving (Eq, Show, Generic)
-
-instance J.ToJSON Sample where
-  toJSON = J.genericToJSON J.defaultOptions { J.omitNothingFields = True }
+    } deriving (Eq, Show)
 
 
 -- Construct a valid `Sample` from primitive values
